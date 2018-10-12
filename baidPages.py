@@ -46,7 +46,7 @@ def get_info():
     html = browser.page_source  # 获取页面源代码，所有的
     # 使用BS进行分析
     soup = BeautifulSoup(html, 'lxml')
-    items = soup.select('#content_left > div')
+    items = soup.select('div.result.c-container ')
     for item in items:
         Title = item.select('h3 > a')
         mainTit = Title[0].text
@@ -74,7 +74,7 @@ def save_text(info):
 
 def main():
     # 通过关键字进行搜索
-    search('删除本地仓库')
+    search('淘宝')
     # 翻页
     for i in range(2):  # 循环包含前，不包含尾
         # selenium的xpath用法，找到包含“下一页”的a标签去点击
