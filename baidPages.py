@@ -53,8 +53,7 @@ def get_info():
         subTit = ''
         if len(Title) > 1:
             subTit = Title[1].text
-
-        url = item.select('div.f13 > a.c-showurl')[0].text if len(item.select('div.f13 > a.c-showurl')) > 0 else ''
+        url = item.select('h3 > a')[0].get('href')
         evaluate = re.findall(r"\d+\.?\d*", item.select('div.f13 > span.c-pingjia')[0].text) if len(item.select('div.f13 > span.c-pingjia')) > 0 else ''
         info = {
             'mainTit': mainTit,
@@ -74,7 +73,7 @@ def save_text(info):
 
 def main():
     # 通过关键字进行搜索
-    search('淘宝')
+    search('2018最热门编程语言')
     # 翻页
     for i in range(2):  # 循环包含前，不包含尾
         # selenium的xpath用法，找到包含“下一页”的a标签去点击
