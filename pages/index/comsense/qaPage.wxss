@@ -1,0 +1,13 @@
+/* pages/index/comsense/index.wxss */
+
+.mainTitle {
+  margin: 10rpx;
+}
+
+.question {
+  margin: 10rpx;
+}
+
+.button {
+  size: 10px
+}
